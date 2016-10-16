@@ -1,11 +1,16 @@
 .navbar {
     height:10vh;
-    // background-color: $light--grey;
+    // background-color: $grey--lighter;
 
     a {
         text-decoration: none;
         color: $grey--charcoal;
         padding: 8px;
+
+        &:hover {
+            text-decoration: underline;
+
+        }
     }
 }
 
@@ -16,6 +21,14 @@
     &__item {
         align-self: center;
         padding: 10px;
+    }
+
+    &__text {
+        display: none;
+
+        @include respond-to(tablet) {
+            display: block;
+        }
     }
 
 }
