@@ -1,0 +1,35 @@
+.navbar {
+    height:10vh;
+    // background-color: $light--grey;
+
+    a {
+        text-decoration: none;
+        color: $grey--charcoal;
+        padding: 8px;
+    }
+}
+
+.logo {
+    display: flex;
+    height: 100%;
+
+    &__item {
+        align-self: center;
+        padding: 10px;
+    }
+
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.nav__list {
+    align-self: center;
+
+    .nav__item {
+        display: inline;
+    }
+}

@@ -7,11 +7,16 @@
 
 // Base
 @import 'base/core';
+@import 'base/layout';
 
 
 // Components
+@import 'components/header';
+@import 'components/footer';
+@import 'components/button';
 
-// Pages
+// Sections
+@import 'sections/jumbotron';
 
 
 // It's a shame to put code here !

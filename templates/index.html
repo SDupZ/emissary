@@ -2,118 +2,29 @@
 
 {% block main-content %}
 
-<!-- Hero Slider -->
-<div class="hero-slider">
-    <div id="heroSlider">
+<section>
+    <div class="section__jumbotron">
+        <div class="container">
 
-        <div class="image-container">
-          <img src="/static/img/temporary/bg_home_1.jpg">
-        </div>
+            <div class="grid grid--center">
 
-        <div class="image-container">
-          <img src="/static/img/temporary/hero_2.jpg">
-        </div>
+                <div class="grid__item one-half">
+                    <div class="jumbo__wrapper">
+                        <a href="#" class="btn blue btn__jumbo">Post a request</a>
+                    </div>
 
-        <div class="image-container">
-          <img src="/static/img/temporary/hero_1.jpg">
-        </div>
+                </div>
 
-        <div class="image-container">
-          <img src="/static/img/temporary/hero_3.jpg">
-        </div>
+                <div class="grid__item one-half">
+                    <div class="jumbo__wrapper">
+                        <a href="#" class="btn blue btn__jumbo">I can deliver</a>
+                    </div>
+                </div>
 
-    </div>
-</div>
-
-
-<!-- Sections -->
-
-
-<!-- Section X -->
-<div class="section">
-    <div class="section__inner">
-        <h2>Location and Contact</h2>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-        </p>
-        <p>
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-    </div>
-</div>
-
-
-
-<!-- Recent News -->
-<div class="recent-news section">
-    <div class="section__inner ">
-
-      <h2> Recent News</h2>
-
-        <!-- Recent News Own Grid -->
-        <div class="grid grid--center">
-
-            <div class="grid__item one-whole mobile--one-half tablet--one-third">
-                {% include 'includes/_news-tile.html' with img="/static/img/temporary/news_1.jpg"%}
-            </div>
-
-            <div class="grid__item one-whole mobile--one-half tablet--one-third">
-                {% include 'includes/_news-tile.html' with img="/static/img/temporary/news_2.jpg" %}
-            </div>
-
-            <div class="grid__item one-whole mobile--one-half tablet--one-third">
-                {% include 'includes/_news-tile.html' with img="/static/img/temporary/news_3.jpg"%}
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
-
-
-<!-- Generously Sponsored -->
-<div class="sponsors section">
-    <div class="section__inner sponsors">
-        <div class="grid grid--center">
-
-            <div class="grid__item one-whole">
-                <h2>Generously Sponsored by</h2>
-            </div>
-
-            <div class="grid__item one-half tablet--one-third">
-                {% include 'includes/_sponsor-tile.html' with img="/static/img/temporary/sponsor_1.png" text="The Lion Foundation" %}
-            </div>
-
-            <div class="grid__item one-half tablet--one-third">
-                {% include 'includes/_sponsor-tile.html' with img="/static/img/temporary/sponsor_2.png" text="The Lion Foundation" %}
-            </div>
-
-            <div class="grid__item one-half tablet--one-third">
-                {% include 'includes/_sponsor-tile.html' with img="/static/img/temporary/sponsor_3.png" text="The Lion Foundation" %}
-            </div>
-
-            <div class="grid__item one-half tablet--one-third">
-                {% include 'includes/_sponsor-tile.html' with img="/static/img/temporary/sponsor_4.jpg" text="The Lion Foundation" %}
-            </div>
-
-            <div class="grid__item one-half tablet--one-third">
-                {% include 'includes/_sponsor-tile.html' with img="/static/img/temporary/sponsor_5.png" text="The Lion Foundation" %}
-            </div>
-
-            <div class="grid__item one-half tablet--one-third">
-                {% include 'includes/_sponsor-tile.html' with img="/static/img/temporary/sponsor_6.png" text="The Lion Foundation" %}
-            </div>
-
-            <div class="grid__item one-half tablet--one-third">
-                {% include 'includes/_sponsor-tile.html' with img="/static/img/temporary/sponsor_7.jpg"  text="The Toe Pro" %}
-            </div>
-
-            <div class="grid__item one-whole">
-                <p>Thank you to our sponsors for their continuing valued support of our club.</p>
             </div>
 
         </div>
     </div>
-</div>
+</section>
+
 {% endblock main-content %}
