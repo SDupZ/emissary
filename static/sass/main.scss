@@ -4,6 +4,7 @@
 
 // Vendors
 @import 'vendors/flexy-grid';
+@import 'vendors/hamburgers/hamburgers';
 
 // Base
 @import 'base/core';
@@ -14,9 +15,9 @@
 @import 'components/header';
 @import 'components/footer';
 @import 'components/button';
+@import 'components/menu';
 
 // Sections
-@import 'sections/jumbotron';
 
 
 // It's a shame to put code here !

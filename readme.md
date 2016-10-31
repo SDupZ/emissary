@@ -4,7 +4,7 @@
 
 `docker run -it -v c:/Users/Simon/development/emissary:/srv/www/emissary/emissary -p 8000 --name emissary simondupreez/emissary`
 `docker run -it -v ~/development/emissary:/srv/www/emissary/emissary -p 8000 --name emissary simondupreez/emissary`
-`docker run -it -v ~/development/sdup/emissary:/srv/www/emissary/emissary -p 8000-8050:80 -e VIRTUAL_HOST=emissary.dev --name emissary sdupz/emissary`
+`docker run -it -v ~/sdup/emissary:/srv/www/emissary/emissary -p 8000-8050:80 -e VIRTUAL_HOST=emissary.dev --name emissary simondupreez/emissary`
 >>>>>>> 51bf9c97b4c9bad5977a73a91341a778110c9fed
 
 ### Sass Compiler
