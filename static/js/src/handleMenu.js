@@ -31,6 +31,7 @@
     function closeMenu(){
 
         //Hide Menu
+
         menuIcon.removeClass("is-active");
         $('.menu li').removeClass('animate');
         setTimeout(function(){

@@ -3,7 +3,7 @@
 
     background-color: $grey--lighter;
     color: $black;
-    height: 10vh;
+    height: auto;
 
     p {
         font-size: 1.0em;
@@ -27,4 +27,26 @@
         margin: 0 auto;
         padding: 30px;
     }
+}
+
+.footer-item {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+        color: $grey--charcoal;
+    }
+
+}
+
+.container-footer {
+    max-width: 768px;
+    margin: 0 auto;
+    height: 100%;
+
+    padding-left: $gutter;
+    padding-right: $gutter;
 }

@@ -1,0 +1,28 @@
+.listing-tile__container {
+    display:flex;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        color: $black;
+    }
+}
+
+
+.listing-tile__thumb {
+    background-color: $grey--lighter;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 248px;
+    height: 248px;
+    border: 2px solid rgba(0, 0, 0, 0.0);
+    border-radius: 124px;
+}
+
+
+.listing-tile__title {
+}

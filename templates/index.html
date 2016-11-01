@@ -5,7 +5,7 @@
 
     {# Jumbotron #}
     <div class="homepage-section-jumbotron"
-        style="background-image: linear-gradient(to top right, rgba(1, 124, 157, 0.9), rgba(153, 204, 51, 0.9)), url('static/img/temp/jumbotron.jpg');">
+        style="background-image: linear-gradient(to top right, rgba(1, 124, 157, 0.5), rgba(153, 204, 51, 0.5)), url('static/img/temp/image1.jpg');">
         <div class="container">
         </div>
     </div>
@@ -15,6 +15,21 @@
     {# Leaving Soon #}
     <div class="homepage-section-leaving-soon">
         <div class="container">
+            <div class="grid grid--center">
+
+                <div class="grid__item one-third">
+                    {% include 'includes/_listing-tile.html' %}
+                </div>
+
+                <div class="grid__item one-third">
+                    {% include 'includes/_listing-tile.html' %}
+                </div>
+
+                <div class="grid__item one-third">
+                    {% include 'includes/_listing-tile.html' %}
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -23,6 +38,23 @@
     {# Services #}
     <div class="homepage-section-services">
         <div class="container">
+            <div class="service-tile">
+                <img src="static/img/temp/service0.png">
+                <h3>Flexible</h3>
+                <p>Rent a car only when you need it. By the hour, day or week.</p>
+            </div>
+
+            <div class="service-tile">
+                  <img src="static/img/temp/service1.png">
+                  <h3>Flexible</h3>
+                  <p>Rent a car only when you need it. By the hour, day or week.</p>
+              </div>
+
+            <div class="service-tile">
+                <img src="static/img/temp/service2.png">
+                <h3>Flexible</h3>
+                <p>Rent a car only when you need it. By the hour, day or week.</p>
+            </div>
         </div>
     </div>
 
@@ -30,8 +62,7 @@
 
     {# Video #}
     <div class="homepage-section-video">
-        <div class="container">
-        </div>
+        <iframe width="854" height="480" src="https://www.youtube.com/embed/foAAKw8zvOU?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
     </div>
 
 

@@ -1,0 +1,35 @@
+.service-tile {
+    width: 220px;
+    display: inline-block;
+    margin: 70px 30px 60px 30px;
+    height: auto;
+    text-align: center;
+    vertical-align: top;
+    padding-left: 0;
+    position: relative;
+
+    img {
+        float: none;
+        margin: 24px 0;
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 96px;
+        height: 96px;
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 14px;
+        color: #666666;
+        line-height: 1.4em;
+        margin-top: 2px;
+        font-weight: 400;
+        margin: 12px 0 12px 0;
+    }
+}
