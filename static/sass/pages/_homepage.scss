@@ -4,13 +4,30 @@
 		background-repeat: no-repeat;
 		margin-bottom:0;
 		position: relative;
+
 	  height: 500px;
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
+
+
+		h1, p {
+				color: $white;
+				width: 100%;
+				margin-top: 0;
+		}
 }
 
 
 .homepage-section-leaving-soon {
-		padding-top: 100px;
-		padding-bottom: 100px
+		padding-top: 60px;
+		padding-bottom: 100px;
+		text-align: center;
+
+		h1 {
+				color: $grey--charcoal;
+		}
 }
 
 

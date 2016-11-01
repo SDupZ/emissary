@@ -2552,17 +2552,11 @@ body {
   padding-right: 26px; }
 
 /* start da css for da buttons */
-.btn {
-  border-radius: 5px;
-  padding: 15px 25px;
-  font-size: 22px;
-  text-decoration: none;
-  margin: 20px;
+.button {
   color: #fff;
-  position: relative;
-  display: inline-block; }
+  background: #BBDEFB; }
 
-.btn:active {
+.button:active {
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px; }
@@ -2774,6 +2768,21 @@ div.menu li.animate {
     font-weight: 400;
     margin: 12px 0 12px 0; }
 
+.pill, .button {
+  color: #666666;
+  background: #fff;
+  padding: 13px 22px;
+  border: 1px solid #999999;
+  width: 100%;
+  border-radius: 40px;
+  outline: 0;
+  margin: 5px; }
+
+.form-group {
+  max-width: 300px;
+  align-self: center;
+  margin-top: 35px; }
+
 .hide {
   display: none; }
 
@@ -2783,11 +2792,22 @@ div.menu li.animate {
   background-repeat: no-repeat;
   margin-bottom: 0;
   position: relative;
-  height: 500px; }
+  height: 500px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center; }
+  .homepage-section-jumbotron h1, .homepage-section-jumbotron p {
+    color: #fff;
+    width: 100%;
+    margin-top: 0; }
 
 .homepage-section-leaving-soon {
-  padding-top: 100px;
-  padding-bottom: 100px; }
+  padding-top: 60px;
+  padding-bottom: 100px;
+  text-align: center; }
+  .homepage-section-leaving-soon h1 {
+    color: #4c4c4c; }
 
 .homepage-section-services {
   background-color: #F5F5F5;
