@@ -2323,7 +2323,7 @@
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--spin .hamburger-inner::before {
-    transition: top 0.1s 0.34s ease-in, opacity 0.1s ease-in; }
+    transition: top 0.1s 0.34s ease-in, opacity 0.1s ease-in; }
   .hamburger--spin .hamburger-inner::after {
     transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
@@ -2334,7 +2334,7 @@
   .hamburger--spin.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out; }
+    transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out; }
   .hamburger--spin.is-active .hamburger-inner::after {
     bottom: 0;
     transform: rotate(-90deg);
@@ -2347,7 +2347,7 @@
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--spin-r .hamburger-inner::before {
-    transition: top 0.1s 0.34s ease-in, opacity 0.1s ease-in; }
+    transition: top 0.1s 0.34s ease-in, opacity 0.1s ease-in; }
   .hamburger--spin-r .hamburger-inner::after {
     transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
@@ -2358,7 +2358,7 @@
   .hamburger--spin-r.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out; }
+    transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out; }
   .hamburger--spin-r.is-active .hamburger-inner::after {
     bottom: 0;
     transform: rotate(-90deg);
@@ -2371,7 +2371,7 @@
   transition-duration: 0.1s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--squeeze .hamburger-inner::before {
-    transition: top 0.1s 0.14s ease, opacity 0.1s ease; }
+    transition: top 0.1s 0.14s ease, opacity 0.1s ease; }
   .hamburger--squeeze .hamburger-inner::after {
     transition: bottom 0.1s 0.14s ease, transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
@@ -2382,7 +2382,7 @@
   .hamburger--squeeze.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top 0.1s ease, opacity 0.1s 0.14s ease; }
+    transition: top 0.1s ease, opacity 0.1s 0.14s ease; }
   .hamburger--squeeze.is-active .hamburger-inner::after {
     bottom: 0;
     transform: rotate(-90deg);
@@ -2471,8 +2471,7 @@ body {
   top: -webkit-calc(50% - 25px);
   top: -moz-calc(50% - 25px);
   top: calc(50% - 25px);
-  right: 0;
-  z-index: 200; }
+  right: 0; }
   @media only screen and (min-width: 768px) {
     .menu-icon {
       display: none; } }
@@ -2486,8 +2485,9 @@ body {
 
 .navbar {
   height: 100px;
-  background-color: #4c4c4c;
-  position: relative; }
+  position: absolute;
+  width: 100%;
+  z-index: 300; }
   .navbar a {
     text-decoration: none;
     color: #fff;
@@ -2559,6 +2559,7 @@ body {
   background-color: #6FC6FF; }
 
 div.menu-bg {
+  z-index: 200;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2591,7 +2592,8 @@ div.menu {
   padding: 0;
   top: 90px;
   left: 0px;
-  width: 50%; }
+  width: 50%;
+  z-index: 200; }
 
 .menu-splitR {
   left: 50%; }
@@ -2706,3 +2708,14 @@ div.menu li.animate {
 .menu-splitR li.animate:nth-of-type(5) {
   margin-left: -50%;
   transition-delay: 0.2s; }
+
+.hide {
+  display: none; }
+
+.homepage-section-jumbotron {
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 0;
+  position: relative;
+  box-shadow: inset 0 0 0 1000px inear-gradient(to top right, rgba(1, 124, 157, 0.9), rgba(153, 204, 51, 0.9));
+  height: 500px; }

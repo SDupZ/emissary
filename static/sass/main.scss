@@ -17,8 +17,11 @@
 @import 'components/button';
 @import 'components/menu';
 
-// Sections
+//Helpers
+@import 'helpers/helpers';
 
+// Pages
+@import 'pages/homepage';
 
 // It's a shame to put code here !
 @import 'shame';

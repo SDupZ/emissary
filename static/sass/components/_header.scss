@@ -12,7 +12,6 @@
     top:    -moz-calc(50% - 25px);
     top:         calc(50% - 25px);
     right: 0;
-    z-index: 200;
 
     @include respond-to(tablet) {
         display: none;
@@ -29,9 +28,12 @@
 }
 
 .navbar {
+    // background-color: $grey--charcoal;
+
     height:100px;
-    background-color: $grey--charcoal;
-    position: relative;
+    position: absolute;
+    width: 100%;
+    z-index: 300;
 
     a {
         text-decoration: none;

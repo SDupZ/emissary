@@ -20,27 +20,18 @@
 
     menuIcon.on(click, toggleMenu);
 
-    // $('div.menu ul li a').on(click, function(e){
-    //     e.preventDefault();
-    //     closeMenu();
-    // });
-
-
     function openMenu(){
         //Show Menu
         menuIcon.addClass("is-active");
-        // body.addClass("noscroll");
-
         $('div.menu-bg').addClass('animate');
         $('.menu li').addClass('animate');
+
     }
 
     function closeMenu(){
 
         //Hide Menu
         menuIcon.removeClass("is-active");
-        // body.removeClass("noscroll");
-
         $('.menu li').removeClass('animate');
         setTimeout(function(){
             $('div.menu-bg').removeClass('animate');
