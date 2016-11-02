@@ -14,7 +14,13 @@
 
 		h1, p {
 				color: $white;
-				width: 100%;
+		}
+
+		h1 {
+				padding:10px;
+		}
+
+		p {
 				margin-top: 0;
 		}
 }
@@ -27,6 +33,20 @@
 
 		h1 {
 				color: $grey--charcoal;
+		}
+
+		.leaving-soon-two {
+				display: none;
+				@include respond-to(tablet) {
+						display: block;
+				}
+		}
+
+		.leaving-soon-three {
+				display: none;
+				@include respond-to(desktop) {
+						display: block;
+				}
 		}
 }
 

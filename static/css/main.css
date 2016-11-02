@@ -2740,22 +2740,31 @@ div.menu li.animate {
   border-radius: 124px; }
 
 .service-tile {
-  width: 220px;
+  width: 100%;
   display: inline-block;
-  margin: 70px 30px 60px 30px;
   height: auto;
   text-align: center;
   vertical-align: top;
   padding-left: 0;
   position: relative; }
+  @media only screen and (min-width: 768px) {
+    .service-tile {
+      width: 150px;
+      margin: 70px 30px 60px 30px; } }
+  @media only screen and (min-width: 1024px) {
+    .service-tile {
+      width: 220px; } }
   .service-tile img {
-    float: none;
+    float: left;
     margin: 24px 0;
     position: relative;
     left: 0;
     top: 0;
     width: 96px;
     height: 96px; }
+    @media only screen and (min-width: 768px) {
+      .service-tile img {
+        float: none; } }
   .service-tile h3 {
     font-size: 24px;
     line-height: 24px;
@@ -2798,8 +2807,10 @@ div.menu li.animate {
   flex-direction: column;
   justify-content: center; }
   .homepage-section-jumbotron h1, .homepage-section-jumbotron p {
-    color: #fff;
-    width: 100%;
+    color: #fff; }
+  .homepage-section-jumbotron h1 {
+    padding: 10px; }
+  .homepage-section-jumbotron p {
     margin-top: 0; }
 
 .homepage-section-leaving-soon {
@@ -2808,6 +2819,16 @@ div.menu li.animate {
   text-align: center; }
   .homepage-section-leaving-soon h1 {
     color: #4c4c4c; }
+  .homepage-section-leaving-soon .leaving-soon-two {
+    display: none; }
+    @media only screen and (min-width: 768px) {
+      .homepage-section-leaving-soon .leaving-soon-two {
+        display: block; } }
+  .homepage-section-leaving-soon .leaving-soon-three {
+    display: none; }
+    @media only screen and (min-width: 1024px) {
+      .homepage-section-leaving-soon .leaving-soon-three {
+        display: block; } }
 
 .homepage-section-services {
   background-color: #F5F5F5;

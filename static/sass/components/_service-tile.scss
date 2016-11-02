@@ -1,15 +1,26 @@
 .service-tile {
-    width: 220px;
+    width: 100%;
     display: inline-block;
-    margin: 70px 30px 60px 30px;
     height: auto;
     text-align: center;
     vertical-align: top;
     padding-left: 0;
     position: relative;
 
+    @include respond-to(tablet) {
+        width: 150px;
+        margin: 70px 30px 60px 30px;
+    }
+
+    @include respond-to(desktop) {
+        width: 220px;
+    }
+
     img {
-        float: none;
+        @include respond-to(tablet) {
+            float: none;
+        }
+        float: left;
         margin: 24px 0;
         position: relative;
         left: 0;
