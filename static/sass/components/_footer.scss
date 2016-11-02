@@ -1,9 +1,18 @@
 .footer {
     text-align: center;
 
-    background-color: $grey--lighter;
-    color: $black;
-    height: auto;
+    background-color: $grey--charcoal;
+    color: $white;
+
+    img {
+        padding-top: 30px;
+        max-width: 150px
+    }
+
+    h2 {
+      font-size: 1.2em;
+      padding: 20px
+    }
 
     p {
         font-size: 1.0em;
@@ -27,26 +36,4 @@
         margin: 0 auto;
         padding: 30px;
     }
-}
-
-.footer-item {
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    a {
-        text-decoration: none;
-        color: $grey--charcoal;
-    }
-
-}
-
-.container-footer {
-    max-width: 768px;
-    margin: 0 auto;
-    height: 100%;
-
-    padding-left: $gutter;
-    padding-right: $gutter;
 }

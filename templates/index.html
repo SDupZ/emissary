@@ -17,7 +17,7 @@
     {# Leaving Soon #}
     <div class="homepage-section-leaving-soon">
         <div class="container">
-            <h1>Blah Blah Blah</h1>
+            <h1>Drivers Leaving Soon</h1>
             <div class="grid grid--center">
 
                 <div class="grid__item one-whole tablet--one-half desktop--one-third">
@@ -66,6 +66,29 @@
     {# Video #}
     <div class="homepage-section-video">
         <iframe width="854" height="480" src="https://www.youtube.com/embed/foAAKw8zvOU?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+
+    {# News #}
+    <div class="homepage-section-news">
+        <div class="container">
+            <h1>Latest Blogs</h1>
+            <div class="grid grid--center">
+
+                <div class="grid__item one-whole tablet--one-half desktop--one-third">
+                    {% include 'includes/_news-tile.html' with img="/static/img/temp/news0.png"%}
+                </div>
+
+                <div class="grid__item one-whole tablet--one-half desktop--one-third leaving-soon-two">
+                    {% include 'includes/_news-tile.html' with img="/static/img/temp/news1.png"%}
+                </div>
+
+                <div class="grid__item one-whole tablet--one-half desktop--one-third leaving-soon-three">
+                    {% include 'includes/_news-tile.html' with img="/static/img/temp/news2.png"%}
+                </div>
+
+            </div>
+        </div>
     </div>
 
 
