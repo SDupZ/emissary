@@ -25,7 +25,7 @@
         menuIcon.addClass("is-active");
         $('div.menu-bg').addClass('animate');
         $('.menu li').addClass('animate');
-
+        body.addClass("noscroll");
     }
 
     function closeMenu(){
@@ -37,6 +37,7 @@
         setTimeout(function(){
             $('div.menu-bg').removeClass('animate');
         }, 100);
+        body.removeClass("noscroll");
 
     }
 }());

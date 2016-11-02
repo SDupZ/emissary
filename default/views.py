@@ -5,6 +5,11 @@ def home(request):
     context = {}
     return render(request, template, context)
 
+def blog(request):
+    template = 'blog.html'
+    context = {}
+    return render(request, template, context)
+
 def login(request):
     template = 'login.html'
     context = {}

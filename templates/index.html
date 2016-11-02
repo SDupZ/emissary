@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block main-content %}
 
 
     {# Jumbotron #}
     <div class="homepage-section-jumbotron"
-        style="background-image: linear-gradient(to top right, rgba(1, 124, 157, 0.5), rgba(153, 204, 51, 0.5)), url('static/img/temp/image1.jpg');">
+        style="background-image: linear-gradient(to top right, rgba(1, 124, 157, 0.5), rgba(153, 204, 51, 0.5)), url({% static 'img/temp/image1.jpg' %});">
 
         <h1>Blah Blag ... Blah blah blah </h1>
         <p>Subtitle slogan</p>
@@ -42,19 +43,20 @@
     <div class="homepage-section-services">
         <div class="container">
             <div class="service-tile">
-                <img src="static/img/temp/service0.png">
+
+                <img src="{% static 'img/temp/service0.png' %}">
                 <h3>Flexible</h3>
                 <p>Rent a car only when you need it. By the hour, day or week.</p>
             </div>
 
             <div class="service-tile">
-                  <img src="static/img/temp/service1.png">
+                  <img src="{% static 'img/temp/service1.png' %}">
                   <h3>Flexible</h3>
                   <p>Rent a car only when you need it. By the hour, day or week.</p>
               </div>
 
             <div class="service-tile">
-                <img src="static/img/temp/service2.png">
+                <img src="{% static 'img/temp/service2.png' %}">
                 <h3>Flexible</h3>
                 <p>Rent a car only when you need it. By the hour, day or week.</p>
             </div>

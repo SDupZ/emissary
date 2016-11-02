@@ -1,16 +1,17 @@
+{% load static %}
 <!-- Navigation Menu and Header-->
 
 <div class="navbar">
     <div class="container">
         <div class="header">
 
-            <a href="#" class="navbar-img"><div class="navbar-logo" style="background-image: url(static/img/temp/logo.png)"></div></a>
+            <a href="{% url 'home' %}" class="navbar-img"><div class="navbar-logo" style="background-image: url({% static 'img/temp/logo.png' %})"></div></a>
             <a href="#" class="navbar-slogan">Short Little Slogan Title</a>
             <nav class="nav">
                 <!-- Desktop -->
                 <ul class="nav__list">
                     <li class="nav__item"><a class="nav__item__content" href="#">Home</a></li>
-                    <li class="nav__item"><a class="nav__item__content" href="#">Blog</a></li>
+                    <li class="nav__item"><a class="nav__item__content" href="{% url 'blog' %}">Blog</a></li>
                     <li class="nav__item"><a class="nav__item__content" href="#">Help</a></li>
                     <li class="nav__item"><a class="nav__item__content" href="#">Login</a></li>
                     <li class="nav__item"><a class="nav__item__content" href="#">Register</a></li>
@@ -26,18 +27,18 @@
     </div>
 </div>
 
-<div class="menu-bg hide"></div>
+<div class="menu-bg"></div>
 <div class="menu">
     <ul class="menu-splitL">
         <li><a href="">Home</a></li>
-        <li><a href="">Our Team</a></li>
+        <li><a href="{% url 'blog' %}">Blog</a></li>
         <li><a href="">Help</a></li>
         <li><a href="">Login</a></li>
         <li><a href="">Register</a></li>
     </ul>
     <ul class="menu-splitR">
         <li><a href="">Home</a></li>
-        <li><a href="">Our Team</a></li>
+        <li><a href="{% url 'blog' %}">Blog</a></li>
         <li><a href="">Help</a></li>
         <li><a href="">Login</a></li>
         <li><a href="">Register</a></li>
