@@ -1,26 +1,28 @@
 div.menu-bg {
-    z-index: 200;
+    z-index: 10;
     width: 100%;
-    height: 100%;
+    height: 0;
     position: absolute;
     top: 0;
     left: 0;
   	background: $menuBg;
   	opacity: 0;
-  	-webkit-transition: all 300ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
-  	-moz-transition: all 300ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
-      -ms-transition: all 300ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
-  	-o-transition: all 300ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
-  	transition: all 300ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+  	-webkit-transition: all 350ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+  	-moz-transition: all 350ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+      -ms-transition: all 350ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+  	-o-transition: all 350ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+  	transition: all 350ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
 }
 
 div.menu-bg.animate {
+    width: 100%;
+    height: 100%;
   	opacity:0.9;
-  	-webkit-transition: all 400ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
-  	-moz-transition: all 400ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
-      -ms-transition: all 400ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
-      -o-transition: all 400ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
-  	transition: all 400ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+  	-webkit-transition: all 250ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+  	-moz-transition: all 250ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+      -ms-transition: all 250ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+      -o-transition: all 250ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+  	transition: all 250ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
 }
 
 div.menu {
@@ -36,7 +38,7 @@ div.menu {
   	top: 90px;
   	left: 0px;
   	width: 50%;
-    z-index: 200;
+    z-index: 10;
 }
 
 .menu-splitR {

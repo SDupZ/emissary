@@ -16,3 +16,16 @@ https://github.com/sass/node-sass/blob/master/README.md
 `nvm install 6.5.0`
 `npm install node-sass`
 `node compile.js`
+
+
+
+
+Z indices:
+
+Nav: 5
+
+Menu l and Menu r: 10
+
+Menu Bh: 10
+
+Menu Icon: 15
