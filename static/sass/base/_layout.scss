@@ -6,17 +6,3 @@
     padding-left: $gutter;
     padding-right: $gutter;
 }
-
-a {
-    text-decoration: none;
-    color: $black;
-    padding: 8px;
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-h1 {
-    color: $grey--charcoal;
-}

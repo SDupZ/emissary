@@ -4,22 +4,30 @@
 {# Sites outside of nav div as it needs to be on correct z index #}
 <button class="menu-icon hamburger hamburger--spin" type="button">
     <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
+        <span class="hamburger-inner {% if color == 'white' %}hamburger-inner--white-nav{% endif %}"></span>
     </span>
 </button>
 
-<div class="navbar">
+<div class="navbar {% if color == 'white' %}navbar--white{% endif %}">
     <div class="container">
         <div class="header">
 
-            <a href="{% url 'home' %}" class="navbar-img"><div class="navbar-logo" style="background-image: url({% static 'img/temp/logo.png' %})"></div></a>
+            <a href="{% url 'home' %}" class="navbar-img">
+                <div class="navbar-logo" style="background-image: url(
+                    {% if color == 'white' %}
+                        {% static 'img/temp/logo--dark.png' %}
+                    {%else%}
+                        {% static 'img/temp/logo.png' %}
+                    {% endif %})">
+                </div>
+            </a>
             <a href="#" class="navbar-slogan">Short Little Slogan Title</a>
             <nav class="nav">
                 <!-- Desktop -->
                 <ul class="nav__list">
                     <li class="nav__item"><a class="nav__item__content" href="{% url 'home' %}">Home</a></li>
                     <li class="nav__item"><a class="nav__item__content" href="{% url 'blog' %}">Blog</a></li>
-                    <li class="nav__item"><a class="nav__item__content" href="#">Help</a></li>
+                    <li class="nav__item"><a class="nav__item__content" href="{% url 'faq' %}">FAQ</a></li>
                     <li class="nav__item"><a class="nav__item__content" href="#">Login</a></li>
                     <li class="nav__item"><a class="nav__item__content" href="#">Register</a></li>
                 </ul>
@@ -28,19 +36,19 @@
     </div>
 </div>
 
-<div class="menu-bg"></div>
-<div class="menu">
+<div class="menu-bg {% if color == 'white' %}menu-bg--white-nav{% endif %}"></div>
+<div class="menu {% if color == 'white' %}menu--white-nav{% endif %}">
     <ul class="menu-splitL">
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'blog' %}">Blog</a></li>
-        <li><a href="">Help</a></li>
+        <li><a href="{% url 'faq' %}">FAQ</a></li>
         <li><a href="">Login</a></li>
         <li><a href="">Register</a></li>
     </ul>
     <ul class="menu-splitR">
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'blog' %}">Blog</a></li>
-        <li><a href="">Help</a></li>
+        <li><a href="{% url 'faq' %}">FAQ</a></li>
         <li><a href="">Login</a></li>
         <li><a href="">Register</a></li>
     </ul>

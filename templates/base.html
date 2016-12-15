@@ -11,7 +11,10 @@
     </head>
 
     <body>
-        {% include 'includes/_header.html' %}
+        {% block header %}
+            {% include 'includes/_header.html' with color="default" %}
+        {% endblock %}
+
 
         {% block main-content %}
         {% endblock %}

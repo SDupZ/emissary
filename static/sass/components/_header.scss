@@ -20,6 +20,10 @@
     }
 }
 
+.hamburger-inner--white-nav, .hamburger-inner--white-nav:before, .hamburger-inner--white-nav:after {
+    background-color: $primaryAccent;
+}
+
 .nav {
     display: none;
 
@@ -44,6 +48,12 @@
         &:hover {
             text-decoration: underline;
         }
+    }
+}
+
+.navbar--white {
+    a {
+        color: $grey;
     }
 }
 

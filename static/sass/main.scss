@@ -12,6 +12,8 @@
 
 
 // Components
+@import 'components/headings';
+@import 'components/links';
 @import 'components/header';
 @import 'components/footer';
 @import 'components/button';
@@ -27,6 +29,7 @@
 // Pages
 @import 'pages/homepage';
 @import 'pages/blog';
+@import 'pages/faq';
 
 // It's a shame to put code here !
 @import 'shame';
