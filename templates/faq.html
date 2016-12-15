@@ -6,8 +6,23 @@
 
 {% block main-content %}
     <div class="faq-page">
-        <div class="container">
+        <div class="container container__faq-page">
 
+            <div class="heading__page">
+                {{ heading }}
+            </div>
+
+            <ol class="faq-list">
+                {% for faq in faqs %}
+                    <li class="faq-list--item">
+                        <div class="heading__faq-question">
+                            {{ faq.question }}
+                        </div>
+                        <p>{{ faq.answer|safe }}</p>
+                    </li>
+
+                {% endfor %}
+            </ol>
 
         </div>
     </div>

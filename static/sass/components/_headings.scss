@@ -1,3 +1,20 @@
 h1 {
     color: $grey--charcoal;
 }
+
+.heading__page {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #017C9D;
+    margin: 55px auto;
+}
+
+
+.heading__faq-question {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: $grey;
+}

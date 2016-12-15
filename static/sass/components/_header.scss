@@ -52,8 +52,15 @@
 }
 
 .navbar--white {
+    border-bottom: 1px solid #EEEEEE;
+    position:relative;
+
     a {
         color: $grey;
+    }
+
+    .divider-vertical {
+        border-right: 1px solid $grey;
     }
 }
 

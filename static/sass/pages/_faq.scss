@@ -2,3 +2,27 @@
     background-color: $greyBg;
     height:100vh;
 }
+
+// .faq-list--item {
+//     padding: 10px 0 10px 60px;
+// }
+//
+.faq-list {
+    list-style: none;
+    counter-increment: item;
+    counter-reset: ;
+}
+
+.faq-list--item {
+    counter-increment: item;
+    &:before {
+        content: counter(item);
+        margin-right: 10px;
+        color: #FFFFFF;
+        background: #8D3491;
+        border-radius: 100%;
+        width: 1.2em;
+        text-align: center;
+        display: inline-block;
+    }
+}

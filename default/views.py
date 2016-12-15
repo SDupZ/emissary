@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from site_settings.models import FAQPageSettings
 
 def home(request):
     template = 'index.html'
@@ -12,7 +13,14 @@ def blog(request):
 
 def faq(request):
     template = 'faq.html'
-    context = {}
+
+    faqSettings = FAQPageSettings.objects.all()
+    faqSettings = faqSettings[0] if len(faqSettings) > 0 else faqSettings
+
+    context = {
+        'heading': faqSettings.heading,
+        'faqs': faqSettings.faq_blocks.all(),
+    }
     return render(request, template, context)
 
 def login(request):
