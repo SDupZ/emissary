@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block main-content %}
-    <div class="faq-page">
-        <div class="container container__faq-page">
+    <div class="page page--faq">
+        <div class="container container--thin">
 
             <div class="heading__page">
                 {{ heading }}
@@ -15,7 +15,7 @@
             <ol class="faq-list">
                 {% for faq in faqs %}
                     <li class="list__item">
-                        <div class="heading__faq-question">
+                        <div class="heading__content">
                             {{ faq.question }}
                         </div>
                         <p>{{ faq.answer|safe }}</p>

@@ -18,3 +18,15 @@ class FAQItem(models.Model):
 
     class Meta:
         verbose_name = "FAQ Item"
+
+
+class ContactMessage(models.Model):
+    contact_name = models.CharField(max_length=100)
+    contact_email = models.EmailField()
+    content = models.TextField()
+
+    def __unicode__(self):
+        return "Message from " + self.contact_name
+
+    class Meta:
+        verbose_name = "Contact Form Message"

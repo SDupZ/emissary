@@ -29,9 +29,11 @@
 @import 'helpers/helpers';
 
 // Pages
+@import 'pages/default';
 @import 'pages/homepage';
 @import 'pages/blog';
 @import 'pages/faq';
+@import 'pages/contact';
 
 // It's a shame to put code here !
 @import 'shame';

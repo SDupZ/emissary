@@ -24,6 +24,8 @@
         //Show Menu
         menuIcon.addClass("is-active");
         $('div.menu-bg').addClass('animate');
+        $('.menu-splitL').addClass('animate');
+        $('.menu-splitR').addClass('animate');
         $('.menu li').addClass('animate');
         body.addClass("noscroll");
     }
@@ -34,6 +36,8 @@
 
         menuIcon.removeClass("is-active");
         $('.menu li').removeClass('animate');
+        $('.menu-splitL').removeClass('animate');
+        $('.menu-splitR').removeClass('animate');
         setTimeout(function(){
             $('div.menu-bg').removeClass('animate');
         }, 100);

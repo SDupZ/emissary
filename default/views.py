@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from site_settings.models import FAQPageSettings
+from default.forms import ContactForm
 
 def home(request):
     template = 'index.html'
@@ -9,6 +10,25 @@ def home(request):
 def blog(request):
     template = 'blog.html'
     context = {}
+    return render(request, template, context)
+
+def contact(request):
+    template = 'contact.html'
+    form_class = ContactForm
+
+    if request.method == 'POST':
+        form = form_class(data=request.POST)
+
+        if form.is_valid():
+            # contact_name = request.POST.get('contact_name', '')
+            # contact_email = request.POST.get('contact_email', '')
+            # form_content = request.POST.get('content', '')
+
+            form.save()
+
+    context = {
+        'form': form_class,
+    }
     return render(request, template, context)
 
 def faq(request):
