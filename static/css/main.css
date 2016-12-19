@@ -2872,6 +2872,31 @@ p {
   font-size: 12px;
   font-weight: 400; }
 
+form input, form textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  outline: none; }
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  background: white;
+  border: 1px solid #e5e5e5;
+  font-size: 1.6em;
+  padding: .8em .5em;
+  border-radius: 5px; }
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  background: #fff;
+  border: 1px solid #337ab7; }
+
+form button {
+  width: 140px;
+  padding: .8em .5em; }
+
 .hide {
   opacity: 0; }
 
