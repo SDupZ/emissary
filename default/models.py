@@ -4,6 +4,7 @@ from django.db import models
 from site_settings.models import FAQPageSettings
 from ckeditor.fields import RichTextField
 
+
 class FAQItem(models.Model):
     faq_settings = models.ForeignKey(FAQPageSettings, blank=True, null=True, related_name='faq_blocks')
 
