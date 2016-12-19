@@ -14,13 +14,12 @@
 
             <ol class="faq-list">
                 {% for faq in faqs %}
-                    <li class="faq-list--item">
+                    <li class="list__item">
                         <div class="heading__faq-question">
                             {{ faq.question }}
                         </div>
                         <p>{{ faq.answer|safe }}</p>
                     </li>
-
                 {% endfor %}
             </ol>
 

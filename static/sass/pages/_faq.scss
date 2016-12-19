@@ -1,6 +1,6 @@
 .faq-page {
     background-color: $greyBg;
-    height:100vh;
+    min-height: 90vh;
 }
 
 // .faq-list--item {
@@ -8,21 +8,50 @@
 // }
 //
 .faq-list {
-    list-style: none;
-    counter-increment: item;
-    counter-reset: ;
-}
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: list-counter;
+    display: block;
 
-.faq-list--item {
-    counter-increment: item;
-    &:before {
-        content: counter(item);
-        margin-right: 10px;
-        color: #FFFFFF;
-        background: #8D3491;
-        border-radius: 100%;
-        width: 1.2em;
+    .list__item {
+        background-image: linear-gradient(180deg, #ddd 0%, #ddd 100%);
+        background-repeat: no-repeat;
+        background-size: 2px 100%;
+        background-position: 1rem center;
+        display: block;
+        min-height: 2rem;
+        padding-bottom: 1rem;
+        padding-left: 3rem;
+        position: relative;
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+                &::before {
+                    background-position: center #{$i}0%;
+                }
+            }
+        }
+
+    &::before {
+        background: $primaryAccent;
+        background: linear-gradient(180deg, $primaryAccent 0%, #a234d5 50%, #d74059 100%);
+        background-repeat: no-repeat;
+        background-size: 2rem 10rem;
+        border-radius: 50%;
+        color: white;
+        content: counter(list-counter);
+        counter-increment: list-counter;
+        display: block;
+        height: 2rem;
+        left: 0;
+        line-height: 2;
+        position: absolute;
         text-align: center;
-        display: inline-block;
+        width: 2rem;
     }
+
+    &:last-child {
+        background: none;
+    }
+  }
 }
