@@ -6,10 +6,10 @@
 
     {# Jumbotron #}
     <div class="homepage-section-jumbotron"
-        style="background-image: linear-gradient(to top right, rgba(1, 124, 157, 0.5), rgba(153, 204, 51, 0.5)), url({% static 'img/temp/image1.jpg' %});">
+        style="background-image: linear-gradient(to top right, rgba(1, 124, 157, 0.5), rgba(153, 204, 51, 0.5)), url({% if homepage_settings.main_image %}{{ homepage_settings.main_image.url }}{% else %}{% static 'img/fallback/jumbotron_image.jpg' %}{% endif %});">
 
-        <h1>Blah Blag ... Blah blah blah </h1>
-        <p>Subtitle slogan</p>
+        <h1>{% if homepage_settings.main_heading %}{{ homepage_settings.main_heading }}{% else %}Emissary{% endif %}</h1>
+        <p>{% if homepage_settings.main_subtitle %}{{ homepage_settings.main_subtitle }}{% else %}Crowd Sourced Delivery{% endif %}</p>
 
     </div>
 
@@ -18,7 +18,7 @@
     {# Leaving Soon #}
     <div class="homepage-section-leaving-soon">
         <div class="container">
-            <h1>Blha Blah Bla</h1>
+            <h1>{% if homepage_settings.leaving_soon_heading %}{{ homepage_settings.leaving_soon_heading }}{% else %}Leaving Soon{% endif %}</h1>
             <div class="grid grid--center">
 
                 <div class="grid__item one-whole tablet--one-half desktop--one-third">
@@ -44,21 +44,21 @@
         <div class="container">
             <div class="service-tile">
 
-                <img src="{% static 'img/temp/service0.png' %}">
-                <h3>Flexible</h3>
-                <p>Rent a car only when you need it. By the hour, day or week.</p>
+                <img src="{% if homepage_settings.services_image_one %}{{ homepage_settings.services_image_one.url }}{% else %}{% static 'img/fallback/service0.png' %}{% endif %}">
+                <h3>{% if homepage_settings.services_heading_one %}{{ homepage_settings.services_heading_one }}{% else %}Flexible{% endif %}</h3>
+                <p>{% if homepage_settings.services_blurb_one %}{{ homepage_settings.services_blurb_one }}{% else %}Fast and Flexible{% endif %}</p>
             </div>
 
             <div class="service-tile">
-                  <img src="{% static 'img/temp/service1.png' %}">
-                  <h3>Flexible</h3>
-                  <p>Rent a car only when you need it. By the hour, day or week.</p>
+                  <img src="{% if homepage_settings.services_image_two %}{{ homepage_settings.services_image_two.url }}{% else %}{% static 'img/fallback/service1.png' %}{% endif %}">
+                  <h3>{% if homepage_settings.services_heading_two %}{{ homepage_settings.services_heading_two }}{% else %}Flexible{% endif %}</h3>
+                  <p>{% if homepage_settings.services_blurb_two %}{{ homepage_settings.services_blurb_two }}{% else %}Fast and Flexible{% endif %}</p>
               </div>
 
             <div class="service-tile">
-                <img src="{% static 'img/temp/service2.png' %}">
-                <h3>Flexible</h3>
-                <p>Rent a car only when you need it. By the hour, day or week.</p>
+                <img src="{% if homepage_settings.services_image_three %}{{ homepage_settings.services_image_three.url }}{% else %}{% static 'img/fallback/service2.png' %}{% endif %}">
+                <h3>{% if homepage_settings.services_heading_three %}{{ homepage_settings.services_heading_three }}{% else %}Flexible{% endif %}</h3>
+                <p>{% if homepage_settings.services_blurb_three %}{{ homepage_settings.services_blurb_three }}{% else %}Fast and Flexible{% endif %}</p>
             </div>
         </div>
     </div>
@@ -67,14 +67,14 @@
 
     {# Video #}
     <div class="homepage-section-video">
-        <iframe width="854" height="480" src="https://www.youtube.com/embed/foAAKw8zvOU?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="854" height="480" src="{{ homepage_settings.video }}" frameborder="0" allowfullscreen></iframe>
     </div>
 
 
     {# News #}
     <div class="homepage-section-news">
         <div class="container">
-            <h1>Latest Blogs</h1>
+            <h1>{% if homepage_settings.news_heading %}{{ homepage_settings.news_heading }}{% else %}Latest Blogs{% endif %}</h1>
             <div class="grid grid--center">
 
                 <div class="grid__item one-whole tablet--one-half desktop--one-third">
