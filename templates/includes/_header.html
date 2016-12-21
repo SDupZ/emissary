@@ -29,8 +29,8 @@
                     <li class="nav__item"><a class="nav__item__content" href="{% url 'faq' %}">FAQ</a></li>
                     <li class="nav__item"><a class="nav__item__content" href="{% url 'contact' %}">Contact</a></li>
                     <li class="nav__item divider-vertical"></li>
-                    <li class="nav__item"><a class="nav__item__content" href="#">Join</a></li>
-                    <li class="nav__item"><a class="nav__item__content" href="#">Sign in</a></li>
+                    <li class="nav__item"><a class="nav__item__content" href="{% url 'request_delivery' %}">Request Delivery</a></li>
+                    <li class="nav__item"><a class="nav__item__content" href="{% url 'create_trip' %}">Create a Trip</a></li>
                 </ul>
             </nav>
         </div>
@@ -43,14 +43,14 @@
         <li><a href="{% url 'blog' %}">Blog</a></li>
         <li><a href="{% url 'faq' %}">FAQ</a></li>
         <li><a href="{% url 'contact' %}">Contact</a></li>
-        <li><a href="">Join</a></li>
-        <li><a href="">Sign in</a></li>
+        <li><a href="{% url 'request_delivery' %}">Request Delivery</a></li>
+        <li><a href="{% url 'create_trip' %}">Create a Trip</a></li>
     </ul>
     <ul class="menu-splitR">
         <li><a href="{% url 'blog' %}">Blog</a></li>
         <li><a href="{% url 'faq' %}">FAQ</a></li>
         <li><a href="{% url 'contact' %}">Contact</a></li>
-        <li><a href="">Join</a></li>
-        <li><a href="">Sign in</a></li>
+        <li><a href="{% url 'request_delivery' %}">Request Delivery</a></li>
+        <li><a href="{% url 'create_trip' %}">Create a Trip</a></li>
     </ul>
 </div>

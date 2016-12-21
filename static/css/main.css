@@ -2556,7 +2556,9 @@ a {
 
 .footer {
   text-align: center;
-  background-color: #4c4c4c;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   color: #fff; }
   .footer img {
     padding-top: 30px;
