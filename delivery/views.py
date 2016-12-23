@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from default.forms import ContactForm
 
 def create_trip(request):
     template = 'create-trip.html'

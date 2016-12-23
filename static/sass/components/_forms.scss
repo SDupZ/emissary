@@ -23,6 +23,11 @@ form {
         border: 1px solid $primaryAccent;
     }
 
+    input[type="checkbox"] {
+        width: auto;
+        display: inline-block;
+    }
+
     button {
         width: 140px;
         padding: .8em .5em;

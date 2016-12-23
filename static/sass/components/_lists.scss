@@ -1,0 +1,48 @@
+.list--ordered {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: list-counter;
+    display: block;
+
+    .list__item {
+        background-image: linear-gradient(180deg, #ddd 0%, #ddd 100%);
+        background-repeat: no-repeat;
+        background-size: 2px 100%;
+        background-position: 1rem center;
+        display: block;
+        min-height: 2rem;
+        padding-bottom: 1rem;
+        padding-left: 3rem;
+        position: relative;
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+                &::before {
+                    background-position: center #{$i}0%;
+                }
+            }
+        }
+
+    &::before {
+        background: $primaryAccent;
+        background: linear-gradient(180deg, $primaryAccent 0%, #a234d5 50%, #d74059 100%);
+        background-repeat: no-repeat;
+        background-size: 2rem 10rem;
+        border-radius: 50%;
+        color: white;
+        content: counter(list-counter);
+        counter-increment: list-counter;
+        display: block;
+        height: 2rem;
+        left: 0;
+        line-height: 2;
+        position: absolute;
+        text-align: center;
+        width: 2rem;
+    }
+
+    &:last-child {
+        background: none;
+    }
+  }
+}
