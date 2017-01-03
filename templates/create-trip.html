@@ -16,12 +16,11 @@
                 <ol class="list--ordered">
                     <li class="list__item">
                         <div class="heading__content">Where are you headed?</div>
-                        <p><label for="id_destination">Destination</label><input id="id_destination" maxlength="100" name="destination" type="text"></p>
                         <p><label for="id_origin">Origin</label><input id="id_origin" maxlength="100" name="origin" type="text"></p>
+                        <p><label for="id_destination">Destination</label><input id="id_destination" maxlength="100" name="destination" type="text"></p>
                     </li>
                     <li class="list__item">
-                        <div class="heading__content">Is this a one time trip or recurring (e.g. a commute)</div>
-
+                        <div class="heading__content">Is this a one time trip or recurring on multiple days (e.g. a commute)</div>
                         <div class="trip-frequency-wrapper">
                             <div class="toggle-wrapper">
                                 <input type="checkbox" class="dn" id="dn"/>
@@ -30,8 +29,14 @@
                                     </span>
                                 </label>
                             </div>
+                        </div>
+                    </li>
 
-                            <div class="weekDays-selector">
+                    <li class="list__item">
+                        <div class="heading__content">Choose a day and time</div>
+
+                        <div class="weekDays-selector">
+                            <div class="trip-frequency-wrapper">
                                 <input type="checkbox" id="weekday-mon" class="weekday" />
                                 <label for="weekday-mon">M</label>
                                 <input type="checkbox" id="weekday-tue" class="weekday" />
@@ -47,13 +52,24 @@
                                 <input type="checkbox" id="weekday-sun" class="weekday" />
                                 <label for="weekday-sun">S</label>
                             </div>
+
+                            <div class="trip-frequency-wrapper">
+                                <input type="radio" name="day_picker" id="weekday-mon-radio" class="weekday" />
+                                <label for="weekday-mon-radio">M</label>
+                                <input type="radio" name="day_picker" id="weekday-tue-radio" class="weekday" />
+                                <label for="weekday-tue-radio">T</label>
+                                <input type="radio" name="day_picker" id="weekday-wed-radio" class="weekday" />
+                                <label for="weekday-wed-radio">W</label>
+                                <input type="radio" name="day_picker" id="weekday-thu-radio" class="weekday" />
+                                <label for="weekday-thu-radio">T</label>
+                                <input type="radio" name="day_picker" id="weekday-fri-radio" class="weekday" />
+                                <label for="weekday-fri-radio">F</label>
+                                <input type="radio" name="day_picker" id="weekday-sat-radio" class="weekday" />
+                                <label for="weekday-sat-radio">S</label>
+                                <input type="radio" name="day_picker" id="weekday-sun-radio" class="weekday" />
+                                <label for="weekday-sun-radio">S</label>
+                            </div>
                         </div>
-
-
-                    </li>
-
-                    <li class="list__item">
-                        <div class="heading__content">Choose a day and time</div>
                     </li>
 
                 </ol>

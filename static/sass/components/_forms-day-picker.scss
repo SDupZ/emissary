@@ -6,7 +6,7 @@
   display: none!important;
 }
 
-.weekDays-selector input[type=checkbox] + label {
+.weekDays-selector input + label {
   display: inline-block;
   border-radius: 6px;
   background: white;
@@ -19,7 +19,7 @@
   border: 1px solid #e5e5e5;
 }
 
-.weekDays-selector input[type=checkbox]:checked + label {
+.weekDays-selector input:checked + label {
   background: $primaryAccent;
   color: white;
 }
