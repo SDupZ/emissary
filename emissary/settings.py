@@ -18,7 +18,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'emissary.dev',
     'sdup.nz',
-    'emissary.co.nz'
+    'emissary.co.nz',
+    'emissary.sdup.nz',
 ]
 
 
