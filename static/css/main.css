@@ -3031,6 +3031,7 @@ input:checked + .toggle {
   height: 100%; }
 
 .page {
+  overflow: auto;
   background-color: #F9F9F9;
   min-height: 90vh; }
 
