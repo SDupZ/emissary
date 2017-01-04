@@ -8,7 +8,7 @@
     <div class="page">
         <div class="container container--thin">
             <div class="heading__page">
-                Add your trip
+                Add a single trip
             </div>
 
             <form role="form" action="" method="post">
@@ -19,6 +19,8 @@
                         <p><label for="id_origin">Origin</label><input id="id_origin" maxlength="100" name="origin" type="text"></p>
                         <p><label for="id_destination">Destination</label><input id="id_destination" maxlength="100" name="destination" type="text"></p>
                     </li>
+
+                    {% comment %}
                     <li class="list__item">
                         <div class="heading__content">Is this a one time trip or recurring on multiple days (e.g. a commute)</div>
                         <div class="trip-frequency-wrapper">
@@ -31,46 +33,49 @@
                             </div>
                         </div>
                     </li>
-
+                    {% endcomment %}
+                    {% verbatim %}
                     <li class="list__item">
                         <div class="heading__content">Choose a day and time</div>
 
-                        <div class="weekDays-selector">
-                            <div class="trip-frequency-wrapper">
-                                <input type="checkbox" id="weekday-mon" class="weekday" />
-                                <label for="weekday-mon">M</label>
-                                <input type="checkbox" id="weekday-tue" class="weekday" />
-                                <label for="weekday-tue">T</label>
-                                <input type="checkbox" id="weekday-wed" class="weekday" />
-                                <label for="weekday-wed">W</label>
-                                <input type="checkbox" id="weekday-thu" class="weekday" />
-                                <label for="weekday-thu">T</label>
-                                <input type="checkbox" id="weekday-fri" class="weekday" />
-                                <label for="weekday-fri">F</label>
-                                <input type="checkbox" id="weekday-sat" class="weekday" />
-                                <label for="weekday-sat">S</label>
-                                <input type="checkbox" id="weekday-sun" class="weekday" />
-                                <label for="weekday-sun">S</label>
-                            </div>
+                        <div id="app">
 
-                            <div class="trip-frequency-wrapper">
-                                <input type="radio" name="day_picker" id="weekday-mon-radio" class="weekday" />
-                                <label for="weekday-mon-radio">M</label>
-                                <input type="radio" name="day_picker" id="weekday-tue-radio" class="weekday" />
-                                <label for="weekday-tue-radio">T</label>
-                                <input type="radio" name="day_picker" id="weekday-wed-radio" class="weekday" />
-                                <label for="weekday-wed-radio">W</label>
-                                <input type="radio" name="day_picker" id="weekday-thu-radio" class="weekday" />
-                                <label for="weekday-thu-radio">T</label>
-                                <input type="radio" name="day_picker" id="weekday-fri-radio" class="weekday" />
-                                <label for="weekday-fri-radio">F</label>
-                                <input type="radio" name="day_picker" id="weekday-sat-radio" class="weekday" />
-                                <label for="weekday-sat-radio">S</label>
-                                <input type="radio" name="day_picker" id="weekday-sun-radio" class="weekday" />
-                                <label for="weekday-sun-radio">S</label>
+                            <div class="calendar__wrapper">
+
+                                <div class="calendar__heading-row">
+                                    <div v-if="currentMonth == 0"></div>
+                                    <div class="left-arrow" v-on:click.prevent="currentMonth -= 1" v-if="currentMonth > 0" ></div>
+                                    {{ timeData[currentMonth].month }} {{ timeData[currentMonth].year }}
+                                    <div class="right-arrow" v-on:click.prevent="currentMonth += 1" v-if="currentMonth < totalMonths - 1"></div>
+                                    <div v-if="currentMonth == totalMonths - 1"></div>
+                                </div>
+
+                                <div class="calendar__weekday-heading-row">
+                                    <div class="calendar__weekday-heading">Su</div>
+                                    <div class="calendar__weekday-heading">Mo</div>
+                                    <div class="calendar__weekday-heading">Tu</div>
+                                    <div class="calendar__weekday-heading">We</div>
+                                    <div class="calendar__weekday-heading">Th</div>
+                                    <div class="calendar__weekday-heading">Fr</div>
+                                    <div class="calendar__weekday-heading">Sa</div>
+                                </div>
+
+                                <div v-for="i in Math.ceil(timeData[currentMonth].days.length / daysPerRow )" class="calendar__day-row">
+                                    <template v-for="day in timeData[currentMonth].days.slice( (i-1) * daysPerRow, (i-1) * daysPerRow + daysPerRow)">
+                                        <template v-if="day.placeholder">
+                                            <input type="radio" name="day_picker" v-bind:id="day.id" class="weekday"/>
+                                            <label v-bind:for="day.id" class="placeholder">{{ day.dayOfMonth }}</label>
+                                        </template>
+                                        <template v-if="!day.placeholder">
+                                            <input type="radio" name="day_picker" v-bind:id="day.id" class="weekday"/>
+                                            <label v-bind:for="day.id">{{ day.dayOfMonth }}</label>
+                                        </template>
+                                    </template>
+                                </div>
                             </div>
                         </div>
                     </li>
+                    {% endverbatim %}
 
                 </ol>
 
@@ -79,3 +84,9 @@
         </div>
     </div>
 {% endblock main-content %}
+
+
+{% block scripts %}
+    <!-- Source -->
+    <script type="text/javascript" src="/static/js/src/handleCalendar.js"></script>
+{% endblock scripts %}

@@ -2462,6 +2462,34 @@ body {
 .container--thin {
   max-width: 594px; }
 
+.left-arrow, .right-arrow {
+  border-bottom: 2px solid #337ab7;
+  border-left: 2px solid #337ab7;
+  height: 10px;
+  width: 10px;
+  display: inline-block; }
+  .left-arrow:before, .right-arrow:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+    left: -14px;
+    right: 0px;
+    bottom: 0px;
+    width: 30px;
+    border: 2px solid #337ab7;
+    border-radius: 20px;
+    height: 30px;
+    opacity: 0; }
+  .left-arrow:hover:before, .right-arrow:hover:before {
+    opacity: 1; }
+
+.left-arrow {
+  transform: rotate(45deg); }
+
+.right-arrow {
+  transform: rotate(-135deg); }
+
 .list--ordered {
   list-style-type: none;
   margin: 0;
@@ -2525,7 +2553,7 @@ h1 {
   font-size: 28px;
   font-weight: 400;
   line-height: 36px;
-  color: #017C9D;
+  color: #337ab7;
   margin: 55px auto; }
 
 .heading__content {
@@ -3022,6 +3050,61 @@ input:checked + .toggle {
 .weekDays-selector input:checked + label {
   background: #337ab7;
   color: white; }
+
+.calendar__wrapper {
+  width: 309px;
+  margin: 30px auto; }
+
+.calendar__heading-row {
+  margin: 10px 20px 0px 10px;
+  text-align: center;
+  color: #337ab7;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.calendar__weekday-heading-row {
+  margin: 0px 20px;
+  display: inline-block; }
+
+.calendar__weekday-heading {
+  display: inline-block;
+  color: #337ab7;
+  height: 32px;
+  width: 32px;
+  margin-right: 3px;
+  line-height: 40px;
+  text-align: center; }
+
+.calendar__day-row {
+  margin: 4px 20px;
+  display: inline-block; }
+
+.calendar__day-row .weekday {
+  display: none !important; }
+
+.calendar__day-row .weekday + label {
+  display: inline-block;
+  border-radius: 6px;
+  background: white;
+  color: #666666;
+  height: 30px;
+  width: 30px;
+  margin-right: 3px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #e5e5e5; }
+
+.calendar__day-row .weekday:checked + label {
+  background: #337ab7;
+  color: white; }
+
+.placeholder {
+  opacity: 0;
+  cursor: default; }
 
 .hide {
   opacity: 0; }
