@@ -3203,6 +3203,9 @@ input:checked + .toggle {
   overflow-y: hidden;
   height: 100%; }
 
+.display-none {
+  display: none; }
+
 .page {
   overflow: auto;
   background-color: #F9F9F9;
@@ -3271,3 +3274,26 @@ input:checked + .toggle {
   width: initial;
   margin: 0 auto;
   text-align: center; }
+
+.request-delivery__size-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 15px; }
+
+.request-delivery__size-tile-image {
+  margin: 0 auto;
+  align-self: center; }
+  .request-delivery__size-tile-image--small {
+    width: 50px; }
+  .request-delivery__size-tile-image--medium {
+    width: 80px; }
+  .request-delivery__size-tile-image--large {
+    width: 110px; }
+
+.request-delivery__size-grid {
+  margin-top: 20px; }
+
+label + input:checked {
+  background: #000; }

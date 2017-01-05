@@ -1,0 +1,33 @@
+.request-delivery__size-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    padding: 15px;
+}
+
+.request-delivery__size-tile-image {
+    margin: 0 auto;
+    align-self: center;
+
+    &--small {
+        width: 50px;
+    }
+
+    &--medium {
+        width: 80px;
+    }
+
+    &--large {
+        width: 110px;
+    }
+}
+
+.request-delivery__size-grid {
+    margin-top: 20px;
+}
+
+
+label + input:checked {
+    background: $black;
+}

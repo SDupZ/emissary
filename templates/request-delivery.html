@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block header %}
     {% include 'includes/_header.html' with color="white" %}
 {% endblock %}
@@ -7,7 +9,117 @@
 {% block main-content %}
     <div class="page">
         <div class="container container--thin">
+            <div class="heading__page">
+                Ask for a delivery
+            </div>
 
+            <form role="form" action="" method="post">
+                {% csrf_token %}
+                <ol class="list--ordered">
+                    <li class="list__item">
+                        <div class="heading__content">How big is the item?</div>
+
+                        <div class="grid grid--center request-delivery__size-grid">
+
+
+                            <label for="size_small" class="grid__item one-whole mobile--one-third request-delivery__size-tile">
+                                <input type="radio" name="size_picker" id="size_small" class=""/>
+                                <img src="{% static 'img/icon-box.svg' %}" class="request-delivery__size-tile-image request-delivery__size-tile-image--small"/>
+                                <p>Small (Backpack)</p>
+                            </label>
+
+                            <label for="size_medium"  class="grid__item one-whole mobile--one-third request-delivery__size-tile">
+                                <input type="radio" name="size_picker" id="size_medium" class=""/>
+                                <img src="{% static 'img/icon-box.svg' %}" class="request-delivery__size-tile-image request-delivery__size-tile-image--medium"/>
+                                <p>Medium (Car)</p>
+                            </label>
+
+                            <label for="size_large"  class="grid__item one-whole mobile--one-third request-delivery__size-tile">
+                                <input type="radio" name="size_picker" id="size_large" class=""/>
+                                <img src="{% static 'img/icon-box.svg' %}" class="request-delivery__size-tile-image request-delivery__size-tile-image--large"/>
+                                <p>Large (Van)</p>
+                            </label>
+
+                        </div>
+
+                    </li>
+
+                    <li class="list__item">
+                        <div class="heading__content">Where is the pickup?</div>
+                        <p><label for="id_origin">Origin</label>
+                            <div id="id_origin">
+                              <input id="autocomplete_origin" placeholder="Origin Location" type="text"></input>
+                            </div>
+                        </p>
+                        <p><label for="id_destination">Where is the dropoff?</label>
+                            <div id="id_destination">
+                              <input id="autocomplete_destination" placeholder="Destination Location" type="text"></input>
+                            </div>
+                        </p>
+                    </li>
+
+                    {% verbatim %}
+                    <li class="list__item">
+                        <div class="heading__content">Choose a day</div>
+
+                        <div id="app">
+
+                            <div class="calendar__wrapper">
+
+                                <div class="calendar__heading-row">
+                                    <div v-if="currentMonth == 0"></div>
+                                    <div class="left-arrow" v-on:click.prevent="currentMonth -= 1" v-if="currentMonth > 0" ></div>
+                                    {{ timeData[currentMonth].month }} {{ timeData[currentMonth].year }}
+                                    <div class="right-arrow" v-on:click.prevent="currentMonth += 1" v-if="currentMonth < totalMonths - 1"></div>
+                                    <div v-if="currentMonth == totalMonths - 1"></div>
+                                </div>
+
+                                <div class="calendar__weekday-heading-row">
+                                    <div class="calendar__weekday-heading">Su</div>
+                                    <div class="calendar__weekday-heading">Mo</div>
+                                    <div class="calendar__weekday-heading">Tu</div>
+                                    <div class="calendar__weekday-heading">We</div>
+                                    <div class="calendar__weekday-heading">Th</div>
+                                    <div class="calendar__weekday-heading">Fr</div>
+                                    <div class="calendar__weekday-heading">Sa</div>
+                                </div>
+
+                                <div v-for="i in Math.ceil(timeData[currentMonth].days.length / daysPerRow )" class="calendar__day-row">
+                                    <template v-for="day in timeData[currentMonth].days.slice( (i-1) * daysPerRow, (i-1) * daysPerRow + daysPerRow)">
+                                        <template v-if="day.placeholder">
+                                            <input type="radio" name="day_picker" v-bind:id="day.id" class="weekday"/>
+                                            <label v-bind:for="day.id" class="placeholder">{{ day.dayOfMonth }}</label>
+                                        </template>
+                                        <template v-if="!day.placeholder">
+                                            <input type="radio" name="day_picker" v-bind:id="day.id" class="weekday"/>
+                                            <label v-bind:for="day.id">{{ day.dayOfMonth }}</label>
+                                        </template>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endverbatim %}
+
+                    <li class="list__item">
+                        <div class="heading__content">Choose a time</div>
+                        <input type="text" class="timepicker timepicker--create-trip" name="time"/>
+                    </li>
+
+                </ol>
+
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
 {% endblock main-content %}
+
+
+{% block scripts %}
+    <!-- Source -->
+    <script type="text/javascript" src="/static/js/src/handleCalendar.js"></script>
+    <script type="text/javascript" src="/static/js/vendors/jquery.timepicker.min.js"></script>
+    <script type="text/javascript" src="/static/js/src/handleTimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/src/handleAutoCompleteField.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChiicnWCYnWyc84sieGT_jcEobKs_oqaE&libraries=places&callback=initAutocomplete" async defer></script>
+{% endblock scripts %}
