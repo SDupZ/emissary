@@ -2542,6 +2542,9 @@ body {
 .container--thin {
   max-width: 594px; }
 
+.wrapper--center {
+  text-align: center; }
+
 .left-arrow, .right-arrow {
   border-bottom: 2px solid #337ab7;
   border-left: 2px solid #337ab7;
@@ -2748,6 +2751,20 @@ a {
     max-width: 50%;
     margin: 0 auto;
     padding: 30px; }
+
+.button {
+  border-radius: 6px;
+  background: #337ab7;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #e5e5e5;
+  margin: 10px; }
+  .button:hover {
+    background: #5393C8;
+    color: #fff; }
+  .button:focus {
+    outline: none; }
 
 div.menu-bg {
   z-index: 10;
@@ -3281,6 +3298,9 @@ input:checked + .toggle {
   justify-content: flex-end;
   text-align: center;
   height: 165px; }
+  .request-delivery__size-tile:hover {
+    border-radius: 25px;
+    background: #F5F5F5; }
 
 .request-delivery__size-tile-image {
   margin: 0 auto;
