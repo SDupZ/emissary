@@ -15,9 +15,10 @@
         bottom: 0px;
         width: 30px;
         border: 2px solid $primaryAccent;
-        border-radius: 20px;
+        border-radius: 2px;
         height: 30px;
         opacity: 0;
+        transform: rotate(45deg);
     }
     &:hover:before {
         opacity: 1;

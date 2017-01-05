@@ -24,7 +24,7 @@ for (var i = 0; i < totalMonths; i++){
   var days =  [];
 
   for (var j = 0; j < offset; j++){
-    days.push({ id: 'id_offset' + j, dayOfMonth: "na", placeholder: true});
+    days.push({ id: 'id_offset' + j, dayOfMonth: "na", placeholder: true, greyed: false});
   }
   for (var k = 1; k <= daysInMonth(date.getMonth(), date.getFullYear()); k++) {
     days.push({ id: 'id_' + date.getFullYear() + '_' + date.getMonth() + '_' + k, dayOfMonth: k, placeholder: false});

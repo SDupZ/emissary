@@ -36,7 +36,7 @@
                     {% endcomment %}
                     {% verbatim %}
                     <li class="list__item">
-                        <div class="heading__content">Choose a day and time</div>
+                        <div class="heading__content">Choose a day</div>
 
                         <div id="app">
 
@@ -77,6 +77,13 @@
                     </li>
                     {% endverbatim %}
 
+                    <li class="list__item">
+                        <div class="heading__content">Choose a time</div>
+                        <input type="text" class="timepicker timepicker--create-trip" name="time"/>
+                    </li>
+
+
+
                 </ol>
 
                 <button type="submit">Submit</button>
@@ -89,4 +96,12 @@
 {% block scripts %}
     <!-- Source -->
     <script type="text/javascript" src="/static/js/src/handleCalendar.js"></script>
+    <script type="text/javascript" src="/static/js/vendors/jquery.timepicker.min.js"></script>
+    <script>
+        (function($) {
+            $(function() {
+                $('input.timepicker').timepicker();
+            });
+        })(jQuery);
+    </script>
 {% endblock scripts %}

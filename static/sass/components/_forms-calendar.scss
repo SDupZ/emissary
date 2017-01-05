@@ -39,17 +39,21 @@
 }
 
 .calendar__day-row  .weekday + label {
-  display: inline-block;
-  border-radius: 6px;
-  background: white;
-  color: $grey;
-  height: 30px;
-  width: 30px;
-  margin-right: 3px;
-  line-height: 30px;
-  text-align: center;
-  cursor: pointer;
-  border: 1px solid #e5e5e5;
+    display: inline-block;
+    border-radius: 6px;
+    background: white;
+    color: $grey;
+    height: 30px;
+    width: 33px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #e5e5e5;
+
+    &:hover {
+        background: $grey--light;
+        color: $white;
+    }
 }
 
 .calendar__day-row  .weekday:checked + label {
