@@ -6,8 +6,8 @@
 
     {# Jumbotron #}
     <div class="homepage-section-jumbotron"
-        style="background-image: linear-gradient(to top right, rgba(1, 124, 157, 0.5), rgba(153, 204, 51, 0.5)), url({% if homepage_settings.main_image %}{{ homepage_settings.main_image.url }}{% else %}{% static 'img/fallback/jumbotron_image.jpg' %}{% endif %});">
-
+        style="background-image: linear-gradient(to top right, rgba(51,122,183, 0.5), rgba(255, 255, 255, 0.5)), url({% if homepage_settings.main_image %}{{ homepage_settings.main_image.url }}{% else %}{% static 'img/fallback/jumbotron_image.jpg' %}{% endif %});">
+        {# style="background-image: linear-gradient(to top right, rgba(1, 124, 157, 0.5), rgba(153, 204, 51, 0.5)), url({% if homepage_settings.main_image %}{{ homepage_settings.main_image.url }}{% else %}{% static 'img/fallback/jumbotron_image.jpg' %}{% endif %});">#}
         <h1>{% if homepage_settings.main_heading %}{{ homepage_settings.main_heading }}{% else %}Emissary{% endif %}</h1>
         <p>{% if homepage_settings.main_subtitle %}{{ homepage_settings.main_subtitle }}{% else %}Crowd Sourced Delivery{% endif %}</p>
 
