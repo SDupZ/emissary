@@ -21,25 +21,29 @@
 
                         <div class="grid grid--center request-delivery__size-grid">
 
+                            <div class="grid__item one-whole mobile--one-third ">
+                                <input type="radio" name="size_picker" id="size_small" class="display-none" checked="checked" />
+                                <label for="size_small" class="request-delivery__size-tile">
+                                    <img src="{% static 'img/icon-beer.svg' %}" class="request-delivery__size-tile-image request-delivery__size-tile-image--small"/>
+                                    <p>Small (Backpack)</p>
+                                </label>
+                            </div>
 
-                            <label for="size_small" class="grid__item one-whole mobile--one-third request-delivery__size-tile">
-                                <input type="radio" name="size_picker" id="size_small" class=""/>
-                                <img src="{% static 'img/icon-box.svg' %}" class="request-delivery__size-tile-image request-delivery__size-tile-image--small"/>
-                                <p>Small (Backpack)</p>
-                            </label>
+                            <div class="grid__item one-whole mobile--one-third ">
+                                <input type="radio" name="size_picker" id="size_medium" class="display-none"/>
+                                <label for="size_medium"  class="request-delivery__size-tile">
+                                    <img src="{% static 'img/icon-box.svg' %}" class="request-delivery__size-tile-image request-delivery__size-tile-image--medium"/>
+                                    <p>Medium (Car)</p>
+                                </label>
+                            </div>
 
-                            <label for="size_medium"  class="grid__item one-whole mobile--one-third request-delivery__size-tile">
-                                <input type="radio" name="size_picker" id="size_medium" class=""/>
-                                <img src="{% static 'img/icon-box.svg' %}" class="request-delivery__size-tile-image request-delivery__size-tile-image--medium"/>
-                                <p>Medium (Car)</p>
-                            </label>
-
-                            <label for="size_large"  class="grid__item one-whole mobile--one-third request-delivery__size-tile">
-                                <input type="radio" name="size_picker" id="size_large" class=""/>
-                                <img src="{% static 'img/icon-box.svg' %}" class="request-delivery__size-tile-image request-delivery__size-tile-image--large"/>
-                                <p>Large (Van)</p>
-                            </label>
-
+                            <div class="grid__item one-whole mobile--one-third ">
+                                <input type="radio" name="size_picker" id="size_large" class="display-none"/>
+                                <label for="size_large"  class="request-delivery__size-tile">
+                                    <img src="{% static 'img/icon-armchair.svg' %}" class="request-delivery__size-tile-image request-delivery__size-tile-image--large"/>
+                                    <p>Large (Van)</p>
+                                </label>
+                            </div>
                         </div>
 
                     </li>

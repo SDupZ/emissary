@@ -3280,7 +3280,7 @@ input:checked + .toggle {
   flex-direction: column;
   justify-content: flex-end;
   text-align: center;
-  padding: 15px; }
+  height: 165px; }
 
 .request-delivery__size-tile-image {
   margin: 0 auto;
@@ -3295,5 +3295,6 @@ input:checked + .toggle {
 .request-delivery__size-grid {
   margin-top: 20px; }
 
-label + input:checked {
-  background: #000; }
+input[type="radio"]:checked + .request-delivery__size-tile {
+  border-radius: 25px;
+  background: #E0E0E0; }
