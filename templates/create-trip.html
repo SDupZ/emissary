@@ -16,8 +16,16 @@
                 <ol class="list--ordered">
                     <li class="list__item">
                         <div class="heading__content">Where are you headed?</div>
-                        <p><label for="id_origin">Origin</label><input id="id_origin" maxlength="100" name="origin" type="text"></p>
-                        <p><label for="id_destination">Destination</label><input id="id_destination" maxlength="100" name="destination" type="text"></p>
+                        <p><label for="id_origin">Origin</label>
+                            <div id="id_origin">
+                              <input id="autocomplete_origin" placeholder="Origin Location" type="text"></input>
+                            </div>
+                        </p>
+                        <p><label for="id_destination">Destination</label>
+                            <div id="id_destination">
+                              <input id="autocomplete_destination" placeholder="Destination Location" type="text"></input>
+                            </div>
+                        </p>
                     </li>
 
                     {% comment %}
@@ -82,8 +90,6 @@
                         <input type="text" class="timepicker timepicker--create-trip" name="time"/>
                     </li>
 
-
-
                 </ol>
 
                 <button type="submit">Submit</button>
@@ -97,11 +103,7 @@
     <!-- Source -->
     <script type="text/javascript" src="/static/js/src/handleCalendar.js"></script>
     <script type="text/javascript" src="/static/js/vendors/jquery.timepicker.min.js"></script>
-    <script>
-        (function($) {
-            $(function() {
-                $('input.timepicker').timepicker();
-            });
-        })(jQuery);
-    </script>
+    <script type="text/javascript" src="/static/js/src/handleTimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/src/handleAutoCompleteField.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChiicnWCYnWyc84sieGT_jcEobKs_oqaE&libraries=places&callback=initAutocomplete" async defer></script>
 {% endblock scripts %}

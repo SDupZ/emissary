@@ -3039,7 +3039,7 @@ form input[type="email"],
 form textarea {
   background: white;
   border: 1px solid #e5e5e5;
-  font-size: 1.4em;
+  font-size: 1.0em;
   padding: .8em .5em;
   border-radius: 5px;
   color: #666666; }
