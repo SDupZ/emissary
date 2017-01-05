@@ -3,8 +3,13 @@
     margin: 0 auto;
     height: 100%;
 
-    padding-left: $gutter;
-    padding-right: $gutter;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @include respond-to(mobile) {
+        padding-left: $gutter;
+        padding-right: $gutter;
+    }
 }
 
 .container--thin {

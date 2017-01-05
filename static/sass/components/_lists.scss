@@ -6,14 +6,16 @@
     display: block;
 
     .list__item {
-        background-image: linear-gradient(180deg, #ddd 0%, #ddd 100%);
+        @include respond-to(mobile) {
+            background-image: linear-gradient(180deg, #ddd 0%, #ddd 100%);
+            padding-left: 3rem;
+        }
         background-repeat: no-repeat;
         background-size: 2px 100%;
         background-position: 1rem center;
         display: block;
         min-height: 2rem;
         padding-bottom: 1rem;
-        padding-left: 3rem;
         position: relative;
         @for $i from 1 through 10 {
             &:nth-child(#{$i}) {
@@ -39,6 +41,10 @@
         position: absolute;
         text-align: center;
         width: 2rem;
+        opacity: 0;
+        @include respond-to(mobile) {
+            opacity: 1;
+        }
     }
 
     &:last-child {
