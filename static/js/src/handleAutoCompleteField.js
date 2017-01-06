@@ -10,7 +10,6 @@ var componentForm = {
   street_number: 'short_name',
   route: 'long_name',
   locality: 'long_name',
-  administrative_area_level_1: 'short_name',
   country: 'long_name',
   postal_code: 'short_name'
 };
@@ -28,37 +27,44 @@ function initAutocomplete() {
 
   // When the user selects an address from the dropdown, populate the address
   // fields in the form.
-  autocomplete_origin.addListener('place_changed', fillInAddress1);
-  autocomplete_destination.addListener('place_changed', fillInAddress2);
+  autocomplete_origin.addListener('place_changed', updateOriginAddress);
+  autocomplete_destination.addListener('place_changed', updateDestinationAddress);
 }
 
-function fillInAddress1() {
+function updateAddressArray(place) {
+    // Get each component of the address from the place details
+    // and fill the corresponding field on the form.
+    for (var i = 0; i < place.address_components.length; i++) {
+      var addressType = place.address_components[i].types[0];
+      if (componentForm[addressType]) {
+          var val = place.address_components[i][componentForm[addressType]];
+          componentForm[addressType] = val;
+      }
+    }
+}
+function updateOriginAddress() {
   // Get the place details from the autocomplete object.
   var place = autocomplete_origin.getPlace();
 
-  // Get each component of the address from the place details
-  // and fill the corresponding field on the form.
-  for (var i = 0; i < place.address_components.length; i++) {
-    var addressType = place.address_components[i].types[0];
-    if (componentForm[addressType]) {
-      var val = place.address_components[i][componentForm[addressType]];
-      console.log(val);
-    }
-  }
+  updateAddressArray(place);
+
+  document.getElementById('origin_street_number').value = Object.values(componentForm)[0]
+  document.getElementById('origin_street_name').value = Object.values(componentForm)[1]
+  document.getElementById('origin_city').value = Object.values(componentForm)[2]
+  document.getElementById('origin_country').value = Object.values(componentForm)[3]
+  document.getElementById('origin_post_code').value = Object.values(componentForm)[4]
 }
 
 
-function fillInAddress2() {
+function updateDestinationAddress() {
   // Get the place details from the autocomplete object.
   var place = autocomplete_destination.getPlace();
 
-  // Get each component of the address from the place details
-  // and fill the corresponding field on the form.
-  for (var i = 0; i < place.address_components.length; i++) {
-    var addressType = place.address_components[i].types[0];
-    if (componentForm[addressType]) {
-      var val = place.address_components[i][componentForm[addressType]];
-      console.log(val);
-    }
-  }
+  updateAddressArray(place);
+
+  document.getElementById('destination_street_number').value = Object.values(componentForm)[0]
+  document.getElementById('destination_street_name').value = Object.values(componentForm)[1]
+  document.getElementById('destination_city').value = Object.values(componentForm)[2]
+  document.getElementById('destination_country').value = Object.values(componentForm)[3]
+  document.getElementById('destination_post_code').value = Object.values(componentForm)[4]
 }

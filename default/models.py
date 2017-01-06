@@ -6,10 +6,10 @@ from ckeditor.fields import RichTextField
 
 
 class FAQItem(models.Model):
-    faq_settings = models.ForeignKey(FAQPageSettings, blank=True, null=True, related_name='faq_blocks')
-
     created = models.DateTimeField(db_index=True, auto_now_add=True)
     modified = models.DateTimeField(db_index=True, auto_now=True)
+
+    faq_settings = models.ForeignKey(FAQPageSettings, blank=True, null=True, related_name='faq_blocks')
 
     question = models.CharField(blank=True, null=True, max_length=100)
     answer = RichTextField(blank=True, null=True)
@@ -22,6 +22,9 @@ class FAQItem(models.Model):
 
 
 class ContactMessage(models.Model):
+    created = models.DateTimeField(db_index=True, auto_now_add=True)
+    modified = models.DateTimeField(db_index=True, auto_now=True)
+
     contact_name = models.CharField(max_length=100)
     contact_email = models.EmailField()
     content = models.TextField()

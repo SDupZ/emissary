@@ -27,7 +27,7 @@ for (var i = 0; i < totalMonths; i++){
     days.push({ id: 'id_offset' + j, dayOfMonth: "na", placeholder: true, greyed: false});
   }
   for (var k = 1; k <= daysInMonth(date.getMonth(), date.getFullYear()); k++) {
-    days.push({ id: 'id_' + date.getFullYear() + '_' + date.getMonth() + '_' + k, dayOfMonth: k, placeholder: false});
+    days.push({ id: 'id_' + date.getFullYear() + '_' + date.getMonth() + '_' + k, dayOfMonth: k, placeholder: false, value: '' + date.getFullYear() + '_' + date.getMonth() + '_' + k});
   }
 
   timeData.push({

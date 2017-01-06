@@ -35,13 +35,14 @@ INSTALLED_APPS = [
 
     # Vendor
     'ckeditor',
-
-    # Custom
-    'default',
-    'site_settings',
     'easy_thumbnails',
     'filer',
     'mptt',
+
+    # Custom
+    'default',
+    'delivery',
+    'site_settings',
 ]
 
 MIDDLEWARE_CLASSES = [
