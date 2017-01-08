@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'default',
     'delivery',
     'site_settings',
+    'blog',
 ]
 
 MIDDLEWARE_CLASSES = [

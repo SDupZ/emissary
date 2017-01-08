@@ -1,8 +1,9 @@
 from django.conf.urls import url
 from django.contrib import admin
 
-from default.views import home, blog, faq, contact
+from default.views import home, faq, contact
 from delivery.views import create_trip, request_delivery
+from blog.views import blogs_list, blog
 
 from django.conf import settings
 from django.views.static import serve
@@ -14,7 +15,9 @@ urlpatterns = [
 
     url(r'^$', home, name='home'),
 
-    url(r'^blog/$', blog, name='blog'),
+    url(r'^blog/$', blogs_list, name='blogs_list'),
+    url(r'^blog/(?P<slug>[^/]+)$', blog, name='blog'),
+
     url(r'^faq/$', faq, name='faq'),
     url(r'^contact/$', contact, name='contact'),
 

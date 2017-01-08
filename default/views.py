@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from site_settings.models import FAQPageSettings, HomepageSettings
+from blog.models import BlogPost
 from default.forms import ContactForm
 
 def home(request):
@@ -8,14 +9,11 @@ def home(request):
     homepage_settings = HomepageSettings.objects.all()
     homepage_settings = homepage_settings[0] if len(homepage_settings) > 0 else homepage_settings
 
+    recent_blogs = BlogPost.objects.all().order_by('-created')[:3]
     context = {
         'homepage_settings': homepage_settings,
+        'blogs': recent_blogs,
     }
-    return render(request, template, context)
-
-def blog(request):
-    template = 'blog.html'
-    context = {}
     return render(request, template, context)
 
 def contact(request):

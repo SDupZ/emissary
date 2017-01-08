@@ -2989,17 +2989,17 @@ div.menu li.animate {
 
 .news-card {
   margin: 20px;
-  background-color: #fff;
   color: #000;
-  text-align: justify; }
+  text-align: justify;
+  display: block; }
+  .news-card:hover {
+    text-decoration: none; }
   @media only screen and (max-width: 1023px) {
     .news-card {
       margin: 10px; } }
   .news-card img {
     width: 100%;
     height: auto; }
-  .news-card .news-text {
-    padding-top: 20px; }
   .news-card .news-img {
     height: 250px;
     background-size: cover;
@@ -3010,10 +3010,10 @@ div.menu li.animate {
     border-radius: 124px;
     margin: 0 auto; }
 
-.read-more {
+.news-heading {
   text-decoration: none;
   color: #297F7A;
-  font-style: italic;
+  font-weight: bold;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 0px;
@@ -3282,6 +3282,10 @@ input:checked + .toggle {
   text-align: center;
   padding-top: 60px;
   padding-bottom: 100px; }
+
+.blogs-list__wrapper {
+  margin-top: 40px;
+  margin-bottom: 40px; }
 
 .trip-frequency-wrapper {
   text-align: center;
