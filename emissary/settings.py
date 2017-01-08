@@ -20,6 +20,7 @@ ALLOWED_HOSTS = [
     'sdup.nz',
     'emissary.co.nz',
     'emissary.sdup.nz',
+    'localhost',
 ]
 
 

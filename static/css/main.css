@@ -3300,7 +3300,8 @@ input:checked + .toggle {
   height: 165px; }
   .request-delivery__size-tile:hover {
     border-radius: 25px;
-    background: #F5F5F5; }
+    background: #F5F5F5;
+    cursor: pointer; }
 
 .request-delivery__size-tile-image {
   margin: 0 auto;
