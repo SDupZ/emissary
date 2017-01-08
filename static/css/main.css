@@ -3170,6 +3170,10 @@ input:checked + .toggle {
   justify-content: space-between;
   align-items: center; }
 
+.daypast {
+  background: #E0E0E0 !important;
+  color: #fff !important; }
+
 .calendar__weekday-heading-row {
   margin: 0px 20px;
   display: inline-block; }

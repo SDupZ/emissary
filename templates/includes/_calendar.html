@@ -1,0 +1,31 @@
+{% verbatim %}
+<div id="app">
+    <div class="calendar__wrapper">
+
+        <div class="calendar__heading-row">
+            <div v-if="currentMonth == 0"></div>
+            <div class="left-arrow" v-on:click.prevent="currentMonth -= 1" v-if="currentMonth > 0" ></div>
+            {{ timeData[currentMonth].month }} {{ timeData[currentMonth].year }}
+            <div class="right-arrow" v-on:click.prevent="currentMonth += 1" v-if="currentMonth < totalMonths - 1"></div>
+            <div v-if="currentMonth == totalMonths - 1"></div>
+        </div>
+
+        <div class="calendar__weekday-heading-row">
+            <div class="calendar__weekday-heading">Su</div>
+            <div class="calendar__weekday-heading">Mo</div>
+            <div class="calendar__weekday-heading">Tu</div>
+            <div class="calendar__weekday-heading">We</div>
+            <div class="calendar__weekday-heading">Th</div>
+            <div class="calendar__weekday-heading">Fr</div>
+            <div class="calendar__weekday-heading">Sa</div>
+        </div>
+
+        <div v-for="i in Math.ceil(timeData[currentMonth].days.length / daysPerRow )" class="calendar__day-row">
+            <template v-for="day in timeData[currentMonth].days.slice( (i-1) * daysPerRow, (i-1) * daysPerRow + daysPerRow)">
+                <input type="radio" name="day_picker" v-bind:id="day.id" class="weekday" v-bind:disabled="day.placeholder == true || day.past == true"/>
+                <label v-bind:for="day.id" v-bind:class="{ placeholder:day.placeholder, daypast: day.past }" >{{ day.dayOfMonth }}</label>
+            </template>
+        </div>
+    </div>
+</div>
+{% endverbatim %}

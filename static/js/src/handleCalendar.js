@@ -2,7 +2,7 @@ function daysInMonth(month,year) {
     return new Date(year, month + 1, 0).getDate();
 }
 
-var totalMonths = 10;
+var totalMonths = 12;
 
 var months = [ "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December" ];
@@ -24,10 +24,14 @@ for (var i = 0; i < totalMonths; i++){
   var days =  [];
 
   for (var j = 0; j < offset; j++){
-    days.push({ id: 'id_offset' + j, dayOfMonth: "na", placeholder: true, greyed: false});
+    days.push({ id: 'id_offset' + j, dayOfMonth: "na", placeholder: true});
   }
   for (var k = 1; k <= daysInMonth(date.getMonth(), date.getFullYear()); k++) {
-    days.push({ id: 'id_' + date.getFullYear() + '_' + date.getMonth() + '_' + k, dayOfMonth: k, placeholder: false, value: '' + date.getFullYear() + '_' + date.getMonth() + '_' + k});
+    var past = false;
+    if (date.getFullYear() <= now.getFullYear() && date.getMonth() <= now.getMonth() && k < now.getDate()) {
+       past = true;
+    }
+    days.push({ id: 'id_' + date.getFullYear() + '_' + date.getMonth() + '_' + k, dayOfMonth: k, placeholder: false, past: past});
   }
 
   timeData.push({
