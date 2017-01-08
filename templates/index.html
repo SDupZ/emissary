@@ -17,6 +17,16 @@
     {# Leaving Soon #}
     <div class="homepage-section-leaving-soon">
         <div class="container">
+
+            {% verbatim %}
+            <div id="app">
+                days: {{ days }} <br>
+                hours: {{ hours }} <br>
+                minutes: {{ minutes }} <br>
+                seconds: {{ seconds }} <br>
+            </div>
+            {% endverbatim %}
+
             <h1>{% if homepage_settings.leaving_soon_heading %}{{ homepage_settings.leaving_soon_heading }}{% else %}Leaving Soon{% endif %}</h1>
             <div class="grid grid--center">
 
@@ -96,3 +106,13 @@
 
 
 {% endblock main-content %}
+
+{% block scripts %}
+  <script type="text/javascript" src="/static/js/src/handleCountdownTimer.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function() {
+          var deadline = "December 31 2017 23:59:59 GMT+0200";
+          initializeClock(deadline);
+      });
+  </script>
+{% endblock scripts %}
