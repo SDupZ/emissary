@@ -18,16 +18,43 @@
     <div class="homepage-section-leaving-soon">
         <div class="container">
 
+            <h1>{% if homepage_settings.leaving_soon_heading %}{{ homepage_settings.leaving_soon_heading }}{% else %}Leaving Soon{% endif %}</h1>
+
             {% verbatim %}
             <div id="app">
-                days: {{ days }} <br>
-                hours: {{ hours }} <br>
-                minutes: {{ minutes }} <br>
-                seconds: {{ seconds }} <br>
+                <div class="timer__wrapper">
+                    <div class="timer__one-unit">
+                        <div class="timer__digits-wrapper">
+                          <div class="timer__digits">{{ timer0.hours }}</div>
+                        </div>
+                        <div class="timer__label-wrapper">
+                          <div class="timer__label">Hours</div>
+                        </div>
+                    </div>
+
+                    <div class="timer__one-unit">
+                        <div class="timer__digits-wrapper">
+                          <div class="timer__digits">{{ timer0.minutes }}</div>
+                        </div>
+                        <div class="timer__label-wrapper">
+                          <div class="timer__label">Minutes</div>
+                        </div>
+                    </div>
+
+                    <div class="timer__one-unit">
+                        <div class="timer__digits-wrapper">
+                          <div class="timer__digits">{{ timer0.seconds }}</div>
+                        </div>
+                        <div class="timer__label-wrapper">
+                          <div class="timer__label">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             {% endverbatim %}
 
-            <h1>{% if homepage_settings.leaving_soon_heading %}{{ homepage_settings.leaving_soon_heading }}{% else %}Leaving Soon{% endif %}</h1>
+            {% comment %}
             <div class="grid grid--center">
 
                 <div class="grid__item one-whole tablet--one-half desktop--one-third">
@@ -43,6 +70,7 @@
                 </div>
 
             </div>
+            {% endcomment %}
         </div>
     </div>
 
@@ -111,8 +139,8 @@
   <script type="text/javascript" src="/static/js/src/handleCountdownTimer.js"></script>
   <script type="text/javascript">
       $(document).ready(function() {
-          var deadline = "December 31 2017 23:59:59 GMT+0200";
-          initializeClock(deadline);
+          var deadline = "January 10 2017 10:59:59 GMT+1300";
+          initializeClock(deadline, 0);
       });
   </script>
 {% endblock scripts %}

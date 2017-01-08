@@ -1,4 +1,4 @@
-// var deadline = '';
+var numberOfTimers = 3;
 
 function getTimeRemaining(endtime){
   var t = Date.parse(endtime) - Date.parse(new Date());
@@ -14,31 +14,39 @@ function getTimeRemaining(endtime){
     'secondsRemaining': secondsRemaining
   };
 }
+var data = {};
 
-var app = new Vue({
-  el: '#app',
-  data: {
+var timers = {};
+for (i = 0; i < numberOfTimers; i++) {
+  var temp = {
     'total': 0,
     'days': 0,
     'hours': 0,
     'minutes': 0,
     'seconds': 0
   }
+  data['timer' + i] = temp;
+}
+var app = new Vue({
+  el: '#app',
+  data: data
 });
 
-function initializeClock(endtime){
+function initializeClock(endtime, clockNumber){
   var timeinterval = setInterval(function(){
     var result = getTimeRemaining(endtime);
-    app.total = result.totalRemaining;
-    app.days = result.daysRemaining;
-    app.hours = result.hoursRemaining
-    app.minutes = result.minutesRemaining;
-    app.seconds = result.secondsRemaining;
+
+    app['timer' + clockNumber] = {
+      'total': result.totalRemaining,
+      'days': result.daysRemaining,
+
+      'hours': result.hoursRemaining,
+      'minutes': result.minutesRemaining,
+      'seconds': result.secondsRemaining
+    }
 
     if(result.total<=0){
       clearInterval(timeinterval);
     }
   },1000);
 }
-
-//initializeClock(deadline);

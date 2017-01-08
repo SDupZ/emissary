@@ -3217,6 +3217,38 @@ input:checked + .toggle {
   opacity: 0;
   cursor: default; }
 
+.timer__wrapper {
+  max-width: 600px;
+  height: 150px;
+  margin: 0 auto; }
+
+.timer__one-unit {
+  height: 100%;
+  width: 30%;
+  display: inline-block; }
+
+.timer__digits-wrapper {
+  background: #fff;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.timer__digits {
+  background: #fff;
+  font-size: 4em; }
+
+.timer__label-wrapper {
+  background: #337ab7;
+  color: #fff;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.timer__label {
+  font-size: 1em; }
+
 .hide {
   opacity: 0; }
 
