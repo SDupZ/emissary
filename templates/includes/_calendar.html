@@ -22,7 +22,7 @@
 
         <div v-for="i in Math.ceil(timeData[currentMonth].days.length / daysPerRow )" class="calendar__day-row">
             <template v-for="day in timeData[currentMonth].days.slice( (i-1) * daysPerRow, (i-1) * daysPerRow + daysPerRow)">
-                <input type="radio" name="day_picker" v-bind:id="day.id" class="weekday" v-bind:disabled="day.placeholder == true || day.past == true"/>
+                <input type="radio" name="date" v-bind:id="day.id" class="weekday" v-bind:disabled="day.placeholder == true || day.past == true"/>
                 <label v-bind:for="day.id" v-bind:class="{ placeholder:day.placeholder, daypast: day.past }" >{{ day.dayOfMonth }}</label>
             </template>
         </div>
